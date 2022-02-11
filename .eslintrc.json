@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "react/state-in-constructor": "off",
+    "react/forbid-prop-types": "off",
+    "comma-dangle": ["warn", "never"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "never"],
+    "max-len": ["warn", { "code": 140 }],
+    "arrow-parens": ["warn", "as-needed"],
+    "jsx-quotes": ["warn", "prefer-single"],
+    "@next/next/no-document-import-in-page": "off",
+    "react-hooks/exhaustive-deps": "warn"
+  }
 }
