@@ -2,9 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Button, Flex, useColorMode, Text, Img, Heading, Divider, Select, Grid } from '@chakra-ui/react'
 import ItemCard from '../components/ItemCard'
+import MainGame from '../components/MainGame'
 
 const Home: NextPage = () => {
   const { toggleColorMode } = useColorMode()
+
   return (
     <>
       <Head>
@@ -64,25 +66,44 @@ const Home: NextPage = () => {
         borderBottomStyle='solid'
       ></Flex>
       <Flex as='main' w='84%' pos='absolute' align='center' direction='column' top='12vh' left='16%'>
-        <Flex h='76vh' w='100%' bgPosition='0% 40%' bgRepeat='no-repeat' bgSize='cover' bgImage={'/haloreach.jpg'} />
+        <MainGame />
         <Divider bgColor='gray.600' h={1} borderWidth={0} />
         <Flex justify='space-between' my={'6vh'} w={'85%'}>
-          <Heading w={'15vw'}>Popular</Heading>
-          <Select w={'15vw'} placeholder='Select option'>
-            <option value='option1'>Option 1</option>
-            <option value='option2'>Option 2</option>
-            <option value='option3'>Option 3</option>
+          <Heading as={'h2'} w={'15vw'}>
+            Popular
+          </Heading>
+          <Select w={'15vw'} placeholder='All platforms'>
+            <option value='option1'>PC</option>
+            <option value='option2'>Playstation</option>
+            <option value='option3'>XBOX</option>
+            <option value='option3'>Nintendo</option>
           </Select>
         </Flex>
         <Grid templateColumns='repeat(4, 1fr)' gap={'3vw'} w={'90%'}>
-          <ItemCard GameName='The Witcher 3' ImageLink={'/thewitcher.webp'} />
-          <ItemCard GameName='Red Dead Redemption 2' ImageLink={'/reddead2.jpg'} />
-          <ItemCard GameName='GTA 5' ImageAlign='45% 0%' ImageLink={'/gta5.jpg'} />
-          <ItemCard GameName='Fallout 4' ImageAlign='13% 0%' ImageLink={'/fallout4.jpg'} />
-          <ItemCard GameName='Dragon Age Inquisition' ImageAlign='15% 0%' ImageLink={'/dragonage.jpeg'} />
-          <ItemCard GameName='TES 5: Skyrim' ImageLink={'/skyrim.jpg'} />
-          <ItemCard GameName='Bioshock Infinite' ImageLink={'/bioshock.jpeg'} />
-          <ItemCard GameName='MGS 5: The Phantom 5' ImageAlign='93% 0%' ImageLink={'/metalgear.jpg'} />
+          <ItemCard rank={2} defaultPrice={34} promoPrice={19} gameName='The Witcher 3' imageLink={'/thewitcher.webp'} />
+          <ItemCard rank={3} defaultPrice={59} promoPrice={54} gameName='Red Dead Redemption 2' fontSize='md' imageLink={'/reddead2.jpg'} />
+          <ItemCard rank={4} defaultPrice={49} promoPrice={24} gameName='GTA 5' imageAlign='45% 0%' imageLink={'/gta5.jpg'} />
+          <ItemCard rank={5} defaultPrice={49} promoPrice={39} gameName='Fallout 4' imageAlign='13% 0%' imageLink={'/fallout4.jpg'} />
+          <ItemCard
+            rank={6}
+            defaultPrice={34}
+            promoPrice={19}
+            gameName='Dragon Age Inquisition'
+            fontSize='lg'
+            imageAlign='15% 0%'
+            imageLink={'/dragonage.jpeg'}
+          />
+          <ItemCard rank={7} defaultPrice={29} promoPrice={14} gameName='TES 5: Skyrim' imageLink={'/skyrim.jpg'} />
+          <ItemCard rank={8} defaultPrice={19} promoPrice={9} gameName='Bioshock Infinite' imageLink={'/bioshock.jpeg'} />
+          <ItemCard
+            rank={9}
+            defaultPrice={39}
+            promoPrice={29}
+            gameName='MGS 5: The Phantom Pain'
+            fontSize='md'
+            imageAlign='93% 0%'
+            imageLink={'/metalgear.jpg'}
+          />
         </Grid>
         <Flex as={'footer'} h={'5vh'} />
       </Flex>
