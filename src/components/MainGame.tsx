@@ -1,4 +1,5 @@
-import { Flex, HStack, VStack, Box, Image, Button, Heading } from '@chakra-ui/react'
+import { Flex, HStack, VStack, Box, Image, Button, Heading, Text, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react'
+import { RiErrorWarningLine } from 'react-icons/ri'
 import { useState } from 'react'
 import ImageButton from './ImageButton'
 
@@ -23,24 +24,43 @@ export default function MainGame() {
     <Flex h='76vh' w='100%'>
       <Image src={image} alt='Game Logo' fit='cover' align='0% 40%' {...backgroundStyle} />
       <Box bgGradient='linear(to-b, transparent, black )' {...backgroundStyle} />
-      <Flex p={14} zIndex={1}>
-        <VStack spacing={4} justify='center' w='30vw'>
-          <Image w='20vw' src='/logoreach2.png' alt='Game Logo' />
-          <HStack justify='center' my={4}>
-            <HStack spacing={2} justify='center'>
-              <Heading as='h4' lineHeight='100%' fontSize='3xl' textDecoration='line-through' fontWeight='extrabold' color='gray.500'>
-                $14
-              </Heading>
-              <Heading as='h4' lineHeight='100%' fontSize='4xl'>
-                $9
-              </Heading>
+      <Flex px={14} py={8} zIndex={1} w='100%' h='100%'>
+        <VStack spacing={8} align='flex-start' w='36%'>
+          <Image src='/logoreach2.png' alt='Game Logo' />
+          <VStack align='flex-start' pl={8}>
+            <Tag size={'md'} variant='solid' bgColor='#ff754c' px={1}>
+              <TagLeftIcon boxSize={5} as={RiErrorWarningLine} />
+              <TagLabel fontWeight='semibold'>{`Top ${7} this month`}</TagLabel>
+            </Tag>
+            <Text fontSize='3xl' fontWeight='bold'>
+              Experience the heroic story of Noble Team
+            </Text>
+            <Text fontSize='lg' fontWeight='bold'>
+              Available for{' '}
+              <Text as='span' decoration='underline'>
+                PC
+              </Text>{' '}
+              and{' '}
+              <Text as='span' decoration='underline'>
+                XBOX
+              </Text>
+            </Text>
+            <HStack my={4} spacing={4}>
+              <HStack spacing={2}>
+                <Heading as='h4' lineHeight='100%' fontSize='3xl' textDecoration='line-through' fontWeight='extrabold' color='gray.500'>
+                  $14
+                </Heading>
+                <Heading as='h4' lineHeight='100%' fontSize='4xl'>
+                  $9
+                </Heading>
+              </HStack>
+              <Button colorScheme='green' size='lg'>
+                Buy Now!
+              </Button>
             </HStack>
-            <Button colorScheme='green' size='lg'>
-              Buy Now!
-            </Button>
-          </HStack>
+          </VStack>
         </VStack>
-        <Flex align='flex-end'>
+        <Flex align='flex-end' justify='flex-end' w='64%'>
           <HStack spacing={4}>
             <ImageButton {...imageButtonProps} imageNumber={1} />
             <ImageButton {...imageButtonProps} imageNumber={2} />

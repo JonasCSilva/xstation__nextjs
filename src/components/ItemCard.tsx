@@ -1,4 +1,4 @@
-import { GridItem, Heading, Image, HStack, Button, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react'
+import { GridItem, Heading, Image, HStack, Button, Tag, TagLeftIcon, TagLabel, Flex } from '@chakra-ui/react'
 import { RiErrorWarningLine } from 'react-icons/ri'
 
 interface ItemCardProps {
@@ -18,12 +18,12 @@ export default function ItemCard({ imageLink, imageAlign, gameName, fontSize = '
       <Heading as={'h3'} fontSize={fontSize} textAlign='center' lineHeight={6} my={4}>
         {gameName}
       </Heading>
-      <HStack justify='center'>
+      <Flex justify='center'>
         <Tag size={'md'} variant='solid' bgColor='#ff754c' px={1}>
           <TagLeftIcon boxSize={5} as={RiErrorWarningLine} />
           <TagLabel fontWeight='semibold'>{`Top ${rank} this month`}</TagLabel>
         </Tag>
-      </HStack>
+      </Flex>
       <HStack justify='center' my={4}>
         <HStack spacing={2} justify='center' align='center'>
           <Heading as='h4' lineHeight='100%' fontSize='lg' textDecoration='line-through' fontWeight='extrabold' color='gray.500'>
