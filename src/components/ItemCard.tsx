@@ -19,17 +19,17 @@ export default function ItemCard({ imageLink, imageAlign, gameName, fontSize = '
         {gameName}
       </Heading>
       <HStack justify='center'>
-        <Tag size={'md'} variant='solid' bgColor='#ff754c'>
-          <TagLeftIcon boxSize={4} as={RiErrorWarningLine} />
+        <Tag size={'md'} variant='solid' bgColor='#ff754c' px={1}>
+          <TagLeftIcon boxSize={5} as={RiErrorWarningLine} />
           <TagLabel fontWeight='semibold'>{`Top ${rank} this month`}</TagLabel>
         </Tag>
       </HStack>
       <HStack justify='center' my={4}>
-        <HStack spacing={2} justify='center'>
-          <Heading as='h4' fontSize='xl' textDecoration='line-through' fontWeight='extrabold' color='gray.500'>
+        <HStack spacing={2} justify='center' align='center'>
+          <Heading as='h4' lineHeight='100%' fontSize='lg' textDecoration='line-through' fontWeight='extrabold' color='gray.500'>
             ${defaultPrice}
           </Heading>
-          <Heading as='h4' fontSize='lg'>
+          <Heading as='h4' lineHeight='100%' fontSize='xl'>
             ${promoPrice}
           </Heading>
         </HStack>
