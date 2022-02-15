@@ -4,7 +4,7 @@ import MainGame from './MainGame'
 
 export default function Main() {
   return (
-    <Flex as='main' w='84%' pos='absolute' align='center' direction='column' top='12vh' left='16%'>
+    <Flex as='main' w='80%' pos='absolute' align='center' direction='column' top='12vh' left='20%'>
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
       <HStack justify='space-between' my={'6vh'} w={'85%'}>

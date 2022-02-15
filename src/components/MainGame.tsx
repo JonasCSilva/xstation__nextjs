@@ -12,17 +12,19 @@ const backgroundStyle = {
 }
 
 export default function MainGame() {
-  const [image, setImage] = useState('/haloreach1.jpeg')
-  const selectedImageNumberState = useState(1)
+  const [imageSrc, setImageSrc] = useState('/haloreach1.jpeg')
+  const selectedImageIndexState = useState(1)
 
   const imageButtonProps = {
-    selectedImageNumberState: selectedImageNumberState,
-    setImage: setImage
+    selectedImageIndexState,
+    setImageSrc
   }
+
+  let index = 0
 
   return (
     <Flex h='76vh' w='100%'>
-      <Image src={image} alt='Game Logo' fit='cover' align='0% 40%' {...backgroundStyle} />
+      <Image src={imageSrc} alt='Game Logo' fit='cover' align='0% 40%' {...backgroundStyle} />
       <Box bgGradient='linear(to-b, transparent, black )' {...backgroundStyle} />
       <Flex px={14} py={8} zIndex={1} w='100%' h='100%'>
         <VStack spacing={8} align='flex-start' w='36%'>
@@ -62,10 +64,10 @@ export default function MainGame() {
         </VStack>
         <Flex align='flex-end' justify='flex-end' w='64%'>
           <HStack spacing={4}>
-            <ImageButton {...imageButtonProps} imageNumber={1} />
-            <ImageButton {...imageButtonProps} imageNumber={2} />
-            <ImageButton {...imageButtonProps} imageNumber={3} />
-            <ImageButton {...imageButtonProps} imageNumber={4} />
+            <ImageButton {...imageButtonProps} imageIndex={++index} />
+            <ImageButton {...imageButtonProps} imageIndex={++index} />
+            <ImageButton {...imageButtonProps} imageIndex={++index} />
+            <ImageButton {...imageButtonProps} imageIndex={++index} />
           </HStack>
         </Flex>
       </Flex>

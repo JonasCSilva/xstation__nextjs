@@ -1,4 +1,5 @@
 import { Button, Flex, Heading, Img, Text, useColorMode } from '@chakra-ui/react'
+import AsideMain from './AsideMain'
 
 export default function Aside() {
   const { toggleColorMode } = useColorMode()
@@ -12,7 +13,7 @@ export default function Aside() {
       direction='column'
       justify='space-between'
       align='center'
-      w='16%'
+      w='20%'
       h={'100vh'}
       borderRightWidth={1}
       borderRightColor={'gray.700'}
@@ -35,6 +36,9 @@ export default function Aside() {
         <Heading as={'h1'} size='lg'>
           XStation
         </Heading>
+      </Flex>
+      <Flex w='100%' h='76vh' justify='center' overflowY='scroll'>
+        <AsideMain />
       </Flex>
       <Flex width='100%' justify='center' align='center' h={'12vh'} borderTopWidth={1} borderTopColor={'gray.700'} borderTopStyle='solid'>
         <Button onClick={toggleColorMode} borderRadius={0} bg='transparent' borderWidth={1} borderColor={'gray.700'} borderStyle='solid'>
