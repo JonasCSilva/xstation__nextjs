@@ -22,6 +22,8 @@ export default function ImageButton({
       p={0}
       w='9vw'
       h='9vh'
+      isDisabled={selectedImageNumber === imageNumber}
+      _disabled={{ opacity: 1, cursor: 'not-allowed' }}
       _selected={{ boxShadow: '0rem 0rem 1rem 0.15rem #fffeff' }}
       _hover={{ boxShadow: '0rem 0rem 1rem 0.05rem #fffeff' }}
     >
