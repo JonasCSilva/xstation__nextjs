@@ -16,7 +16,7 @@ export default function ImageButton({
     <Button
       onClick={() => {
         setSelectedimageIndex(imageIndex)
-        setImageSrc(`/haloreach${imageIndex}.jpeg`)
+        setImageSrc(`/haloreach${imageIndex}.jpg`)
       }}
       aria-selected={selectedImageIndex === imageIndex}
       p={0}
@@ -28,7 +28,7 @@ export default function ImageButton({
       _hover={{ boxShadow: '0rem 0rem 1rem 0.05rem #fffeff' }}
     >
       <Image
-        src={`/haloreach${imageIndex}.jpeg`}
+        src={`/haloreach${imageIndex}.jpg`}
         alt={`Game Image ${imageIndex}`}
         borderWidth={1}
         borderStyle='solid'

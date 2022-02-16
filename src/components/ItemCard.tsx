@@ -13,13 +13,13 @@ interface ItemCardProps {
 
 export default function ItemCard({ imageLink, imageAlign, gameName, fontSize = '2xl', rank = 1, defaultPrice, promoPrice }: ItemCardProps) {
   return (
-    <GridItem w='100%' bg='gray.700' borderRadius={'2vw'} cursor='pointer' _hover={{ boxShadow: 'dark-lg' }} transition='ease-in-out 0.2s'>
-      <Image w='100%' h='40vh' fit='cover' align={imageAlign} src={imageLink} alt='Game Image' borderTopRadius={'2vw'} />
-      <Heading as={'h3'} fontSize={fontSize} textAlign='center' lineHeight={6} my={4}>
+    <GridItem w='100%' bg='gray.700' borderRadius='2vw' cursor='pointer' _hover={{ boxShadow: 'dark-lg' }} transition='ease-in-out 0.2s'>
+      <Image w='100%' h='40vh' fit='cover' align={imageAlign} src={imageLink} alt='Game Image' borderTopRadius='2vw' />
+      <Heading as='h3' fontSize={fontSize} textAlign='center' lineHeight={6} my={4}>
         {gameName}
       </Heading>
       <Flex justify='center'>
-        <Tag size={'md'} variant='solid' bgColor='#ff754c' px={1}>
+        <Tag size='md' variant='solid' bgColor='#ff754c' px={1}>
           <TagLeftIcon boxSize={5} as={RiErrorWarningLine} />
           <TagLabel fontWeight='semibold'>{`Top ${rank} this month`}</TagLabel>
         </Tag>

@@ -7,11 +7,11 @@ export default function Main() {
     <Flex as='main' w='80%' pos='absolute' align='center' direction='column' top='12vh' left='20%'>
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
-      <HStack justify='space-between' my={'6vh'} w={'85%'}>
-        <Heading as={'h2'} w={'15vw'}>
+      <HStack justify='space-between' my='6vh' w='85%'>
+        <Heading as='h2' w='15vw'>
           Popular
         </Heading>
-        <Select w={'15vw'} placeholder='All platforms'>
+        <Select w='15vw' placeholder='All platforms'>
           <option>PC</option>
           <option>Playstation</option>
           <option>XBOX</option>
@@ -19,7 +19,7 @@ export default function Main() {
         </Select>
       </HStack>
       <GamesGrid />
-      <Flex as={'footer'} h={'5vh'} />
+      <Flex as='footer' h='5vh' />
     </Flex>
   )
 }

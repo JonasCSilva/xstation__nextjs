@@ -12,7 +12,7 @@ const backgroundStyle = {
 }
 
 export default function MainGame() {
-  const [imageSrc, setImageSrc] = useState('/haloreach1.jpeg')
+  const [imageSrc, setImageSrc] = useState('/haloreach1.jpg')
   const selectedImageIndexState = useState(1)
 
   const imageButtonProps = {
@@ -30,7 +30,7 @@ export default function MainGame() {
         <VStack spacing={8} align='flex-start' w='36%'>
           <Image src='/logoreach2.png' alt='Game Logo' />
           <VStack align='flex-start' pl={8}>
-            <Tag size={'md'} variant='solid' bgColor='#ff754c' px={1}>
+            <Tag size='md' variant='solid' bgColor='#ff754c' px={1}>
               <TagLeftIcon boxSize={5} as={RiErrorWarningLine} />
               <TagLabel fontWeight='semibold'>{`Top ${7} this month`}</TagLabel>
             </Tag>
