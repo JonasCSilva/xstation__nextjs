@@ -1,4 +1,4 @@
-import { Flex, HStack, VStack, Box, Image, Button, Heading, Text, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react'
+import { Flex, HStack, VStack, Box, Image, Button, Heading, Text, Tag, TagLeftIcon, TagLabel, useMediaQuery } from '@chakra-ui/react'
 import { RiErrorWarningLine } from 'react-icons/ri'
 import { useState } from 'react'
 import ImageButton from './ImageButton'
@@ -14,6 +14,7 @@ const backgroundStyle = {
 export default function MainGame() {
   const [imageSrc, setImageSrc] = useState('/haloreach1.jpg')
   const selectedImageIndexState = useState(1)
+  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
 
   const imageButtonProps = {
     selectedImageIndexState,
@@ -23,7 +24,7 @@ export default function MainGame() {
   let index = 0
 
   return (
-    <Flex h='76vh' w='100%'>
+    <Flex h={isMQTrue ? '46vh' : '76vh'} w='100%'>
       <Image src={imageSrc} alt='Game Logo' fit='cover' align='50% 40%' {...backgroundStyle} />
       <Box bgGradient='linear(to-b, transparent, black )' {...backgroundStyle} />
       <Flex px='3.2vw' py='2.4vw' zIndex={1} w='100%' h='100%'>

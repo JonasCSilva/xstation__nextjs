@@ -3,10 +3,10 @@ import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
 export default function Main() {
-  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1.2/1)')
+  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
 
   return (
-    <Flex as='main' w={isMQTrue ? '80%' : '100%'} pos='absolute' align='center' direction='column' top='12vh' left={isMQTrue ? '20%' : 0}>
+    <Flex as='main' w={isMQTrue ? '100%' : '80%'} pos='absolute' align='center' direction='column' top='12vh' left={isMQTrue ? 0 : '20%'}>
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
       <HStack justify='space-between' my='6vh' w='85%'>

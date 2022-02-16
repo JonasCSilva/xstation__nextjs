@@ -6,15 +6,15 @@ import { ColorsContext } from '../contexts/ColorsContext'
 
 export default function Navbar() {
   const { bgColor } = useContext(ColorsContext)
-  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1.2/1)')
+  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
 
   return (
     <HStack
       as='nav'
       pos='fixed'
-      left={isMQTrue ? '20%' : 0}
+      left={isMQTrue ? 0 : '20%'}
       top={0}
-      w={isMQTrue ? '80%' : '100%'}
+      w={isMQTrue ? '100vw' : '80%'}
       h='12vh'
       bgColor={bgColor}
       zIndex={2}
