@@ -2,7 +2,7 @@ import { Button, Heading } from '@chakra-ui/react'
 import { Dispatch, JSXElementConstructor, ReactElement, SetStateAction } from 'react'
 
 const buttonStyle = {
-  size: 'md',
+  h: '5.4vh',
   variant: 'ghost',
   isFullWidth: true,
   display: 'flex',
@@ -31,7 +31,7 @@ export default function AsideMainButton({
       leftIcon={icon}
       {...buttonStyle}
     >
-      <Heading isTruncated size='sm'>
+      <Heading isTruncated fontSize='1.1vw'>
         {text}
       </Heading>
     </Button>

@@ -17,15 +17,15 @@ export default function Navbar() {
       h='12vh'
       bgColor={bgColor}
       zIndex={2}
-      borderBottomWidth={1}
+      borderBottomWidth='0.1vw'
       borderBottomColor='gray.700'
       borderBottomStyle='solid'
       justify='space-around'
     >
-      <IconButton aria-label='Search games' icon={<FiSearch size={26} />} size='lg' variant='ghost' />
-      <IconButton aria-label='Notifications' icon={<FaRegBell size={24} />} size='lg' variant='ghost' />
-      <Avatar name='Jonas Silva' src={undefined} bg='green.500'>
-        <AvatarBadge boxSize='1.25em' bg='green.500' />
+      <IconButton aria-label='Search games' icon={<FiSearch size='2vw' />} boxSize='3vw' variant='ghost' />
+      <IconButton aria-label='Notifications' icon={<FaRegBell size='2vw' />} boxSize='3vw' variant='ghost' />
+      <Avatar name={undefined} src={undefined} bg='green.500' boxSize='3.5vw'>
+        <AvatarBadge boxSize='1.5vw' bg='green.500' borderColor={bgColor} />
       </Avatar>
     </HStack>
   )

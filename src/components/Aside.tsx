@@ -23,9 +23,9 @@ export default function Aside() {
       <Flex
         as='header'
         direction='row'
-        justify='space-between'
+        justify='space-around'
         align='center'
-        width='100%'
+        w='100%'
         borderBottomWidth='0.1vw'
         borderBottomColor='gray.700'
         borderBottomStyle='solid'
@@ -41,8 +41,17 @@ export default function Aside() {
         <AsideMain />
       </Flex>
       <Flex width='100%' justify='center' align='center' h='12vh' borderTopWidth='0.1vw' borderTopColor='gray.700' borderTopStyle='solid'>
-        <Button onClick={toggleColorMode} borderRadius={0} bg='transparent' borderWidth='0.1vw' borderColor='gray.700' borderStyle='solid'>
-          <Text fontWeight='semibold' color='gray.500'>
+        <Button
+          onClick={toggleColorMode}
+          h='5vh'
+          w='11vw'
+          borderRadius={0}
+          bg='transparent'
+          borderWidth='0.1vw'
+          borderColor='gray.700'
+          borderStyle='solid'
+        >
+          <Text fontWeight='semibold' color='gray.500' fontSize='1.2vw'>
             Change Theme
           </Text>
         </Button>

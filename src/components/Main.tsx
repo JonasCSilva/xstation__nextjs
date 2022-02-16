@@ -8,10 +8,10 @@ export default function Main() {
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
       <HStack justify='space-between' my='6vh' w='85%'>
-        <Heading as='h2' w='15vw'>
+        <Heading as='h2' w='15vw' fontSize='2.3vw'>
           Popular
         </Heading>
-        <Select w='15vw' placeholder='All platforms'>
+        <Select w='15vw' placeholder='All platforms' fontSize='1vw' h='5vh'>
           <option>PC</option>
           <option>Playstation</option>
           <option>XBOX</option>

@@ -22,15 +22,16 @@ export default function ImageButton({
       p={0}
       w='9vw'
       h='9vh'
+      borderRadius='0.8vw'
       isDisabled={selectedImageIndex === imageIndex}
       _disabled={{ opacity: 1, cursor: 'default' }}
-      _selected={{ boxShadow: '0rem 0rem 1rem 0.15rem #fffeff' }}
-      _hover={{ boxShadow: '0rem 0rem 1rem 0.05rem #fffeff' }}
+      _selected={{ boxShadow: '0rem 0rem 1vw 0.15vw #fffeff' }}
+      _hover={{ boxShadow: '0rem 0rem 1vw 0.05vw #fffeff' }}
     >
       <Image
         src={`/haloreach${imageIndex}.jpg`}
         alt={`Game Image ${imageIndex}`}
-        borderWidth={1}
+        borderWidth='0.1vw'
         borderStyle='solid'
         borderColor='#313b40'
         boxSize='inherit'
