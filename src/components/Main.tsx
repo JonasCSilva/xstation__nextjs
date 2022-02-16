@@ -1,12 +1,21 @@
-import { Divider, Flex, Heading, HStack, Select, useMediaQuery } from '@chakra-ui/react'
+import { Divider, Flex, Heading, HStack, Select } from '@chakra-ui/react'
+import useWindowSize from '../hooks/useWindowSize'
 import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
 export default function Main() {
-  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
+  const isMQTrue = useWindowSize()
 
   return (
-    <Flex as='main' w={isMQTrue ? '100%' : '80%'} pos='absolute' align='center' direction='column' top='12vh' left={isMQTrue ? 0 : '20%'}>
+    <Flex
+      as='main'
+      w={isMQTrue ? '100%' : '80%'}
+      pos='absolute'
+      align='center'
+      direction='column'
+      top={isMQTrue ? '8vh' : '12vh'}
+      left={isMQTrue ? 0 : '20%'}
+    >
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
       <HStack justify='space-between' my='6vh' w='85%'>

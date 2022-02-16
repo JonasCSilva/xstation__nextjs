@@ -1,9 +1,10 @@
-import { Button, Flex, Heading, Img, Text, useColorMode, useMediaQuery } from '@chakra-ui/react'
+import { Button, Flex, Heading, Img, Text, useColorMode } from '@chakra-ui/react'
+import useWindowSize from '../hooks/useWindowSize'
 import AsideMain from './AsideMain'
 
 export default function Aside() {
   const { toggleColorMode } = useColorMode()
-  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
+  const isMQTrue = useWindowSize()
 
   return (
     <Flex

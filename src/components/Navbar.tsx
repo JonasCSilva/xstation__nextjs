@@ -1,12 +1,13 @@
-import { HStack, Avatar, AvatarBadge, IconButton, useMediaQuery } from '@chakra-ui/react'
+import { HStack, Avatar, AvatarBadge, IconButton } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { FaRegBell } from 'react-icons/fa'
 import { FiSearch } from 'react-icons/fi'
 import { ColorsContext } from '../contexts/ColorsContext'
+import useWindowSize from '../hooks/useWindowSize'
 
 export default function Navbar() {
   const { bgColor } = useContext(ColorsContext)
-  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
+  const isMQTrue = useWindowSize()
 
   return (
     <HStack
@@ -15,7 +16,7 @@ export default function Navbar() {
       left={isMQTrue ? 0 : '20%'}
       top={0}
       w={isMQTrue ? '100vw' : '80%'}
-      h='12vh'
+      h={isMQTrue ? '8vh' : '12vh'}
       bgColor={bgColor}
       zIndex={2}
       borderBottomWidth='0.1vw'

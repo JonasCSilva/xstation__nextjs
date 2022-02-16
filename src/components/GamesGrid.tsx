@@ -1,8 +1,9 @@
-import { Grid, useMediaQuery } from '@chakra-ui/react'
+import { Grid } from '@chakra-ui/react'
+import useWindowSize from '../hooks/useWindowSize'
 import GameCard from './GameCard'
 
 export default function GamesGrid() {
-  const [isMQTrue] = useMediaQuery('(max-aspect-ratio: 5/4)')
+  const isMQTrue = useWindowSize()
 
   return (
     <Grid templateColumns={isMQTrue ? 'repeat(auto-fill, minmax(250px, 1fr))' : 'repeat(4, 1fr)'} gap='3vw' w='90%'>
