@@ -1,11 +1,13 @@
-import { Button, Flex, Heading, Img, Text, useColorMode } from '@chakra-ui/react'
+import { Button, Flex, Heading, Img, Text, useColorMode, useMediaQuery } from '@chakra-ui/react'
 import AsideMain from './AsideMain'
 
 export default function Aside() {
   const { toggleColorMode } = useColorMode()
+  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1/1)')
 
   return (
     <Flex
+      display={isMQTrue ? undefined : 'none'}
       as='aside'
       pos='fixed'
       left={0}

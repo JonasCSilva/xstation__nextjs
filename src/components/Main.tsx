@@ -1,10 +1,12 @@
-import { Divider, Flex, Heading, HStack, Select } from '@chakra-ui/react'
+import { Divider, Flex, Heading, HStack, Select, useMediaQuery } from '@chakra-ui/react'
 import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
 export default function Main() {
+  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1/1)')
+
   return (
-    <Flex as='main' w='80%' pos='absolute' align='center' direction='column' top='12vh' left='20%'>
+    <Flex as='main' w={isMQTrue ? '80%' : '100%'} pos='absolute' align='center' direction='column' top='12vh' left={isMQTrue ? '20%' : 0}>
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
       <HStack justify='space-between' my='6vh' w='85%'>
