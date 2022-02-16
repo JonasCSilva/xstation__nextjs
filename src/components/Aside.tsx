@@ -3,11 +3,11 @@ import AsideMain from './AsideMain'
 
 export default function Aside() {
   const { toggleColorMode } = useColorMode()
-  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1/1)')
+  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1.2/1)')
 
   return (
     <Flex
-      display={isMQTrue ? undefined : 'none'}
+      display={isMQTrue ? 'block' : 'none'}
       as='aside'
       pos='fixed'
       left={0}

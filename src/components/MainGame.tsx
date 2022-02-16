@@ -24,7 +24,7 @@ export default function MainGame() {
 
   return (
     <Flex h='76vh' w='100%'>
-      <Image src={imageSrc} alt='Game Logo' fit='cover' align='0% 40%' {...backgroundStyle} />
+      <Image src={imageSrc} alt='Game Logo' fit='cover' align='50% 40%' {...backgroundStyle} />
       <Box bgGradient='linear(to-b, transparent, black )' {...backgroundStyle} />
       <Flex px='3.2vw' py='2.4vw' zIndex={1} w='100%' h='100%'>
         <VStack spacing={'3vh'} align='flex-start' justify='space-around' w='36%'>

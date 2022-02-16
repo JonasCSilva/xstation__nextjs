@@ -3,7 +3,7 @@ import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
 export default function Main() {
-  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1/1)')
+  const [isMQTrue] = useMediaQuery('(min-aspect-ratio: 1.2/1)')
 
   return (
     <Flex as='main' w={isMQTrue ? '80%' : '100%'} pos='absolute' align='center' direction='column' top='12vh' left={isMQTrue ? '20%' : 0}>
