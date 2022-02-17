@@ -25,6 +25,7 @@ export default function AsideMainButton({
 }: AsideMainButtonProps) {
   return (
     <Button
+      borderRadius='0.4vw'
       onClick={() => setSelectedButtonIndex(index)}
       aria-selected={selectedButtonIndex === index}
       _selected={{ bgColor: 'green.500' }}

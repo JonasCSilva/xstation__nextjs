@@ -6,7 +6,7 @@ export default function GamesGrid() {
   const isMQTrue = useWindowSize()
 
   return (
-    <Grid templateColumns={isMQTrue ? 'repeat(auto-fill, minmax(250px, 1fr))' : 'repeat(4, 1fr)'} gap='3vw' w='90%'>
+    <Grid templateColumns={isMQTrue ? 'repeat(auto-fill, minmax(120px, 1fr))' : 'repeat(4, 1fr)'} gap='3vw' w='90%'>
       <GameCard rank={1} defaultPrice={34} promoPrice={19} gameName='The Witcher 3' imageAlign='40% 50%' imageLink='/thewitcher.jpg' />
       <GameCard
         rank={2}

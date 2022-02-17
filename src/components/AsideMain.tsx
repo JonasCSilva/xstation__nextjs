@@ -9,7 +9,8 @@ import { RiSettings3Line } from 'react-icons/ri'
 const buttonStyle = {
   h: '5.4vh',
   variant: 'ghost',
-  isFullWidth: true
+  isFullWidth: true,
+  borderRadius: '0.4vw'
 }
 
 export default function AsideMain() {
@@ -22,15 +23,15 @@ export default function AsideMain() {
   let index = 0
 
   return (
-    <VStack w='16vw'>
-      <VStack w='16vw'>
+    <VStack w='80%' spacing='1vh'>
+      <VStack w='100%' spacing='1vh'>
         <AsideMainButton text='Trending' icon={<MdOutlineWhatshot size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='News' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Offers' icon={<MdOutlineLocalOffer size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Recommended' icon={<MdOutlineRecommend size='1.8vw' />} index={++index} {...buttonProps} />
       </VStack>
-      <Divider />
-      <VStack w='16vw'>
+      <Divider borderWidth='0.1vh' />
+      <VStack w='100%' spacing='1vh'>
         <AsideMainButton text='DylanH867' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Vincent_Parks45' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Richard_The_Pro' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
@@ -42,8 +43,8 @@ export default function AsideMain() {
           </Heading>
         </Button>
       </VStack>
-      <Divider />
-      <VStack w='16vw'>
+      <Divider borderWidth='0.1vh' />
+      <VStack w='100%' spacing='1vh'>
         <AsideMainButton text='Chat' icon={<HiOutlineChat size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Groups' icon={<HiOutlineUserGroup size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Settings' icon={<RiSettings3Line size='1.8vw' />} index={++index} {...buttonProps} />

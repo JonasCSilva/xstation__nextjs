@@ -58,7 +58,7 @@ export default function MainGame() {
                   $9
                 </Heading>
               </HStack>
-              <Button colorScheme='green' h='5vh' w='6.6vw' fontSize='1vw'>
+              <Button colorScheme='green' h='5vh' w='6.6vw' fontSize='1vw' borderRadius='0.4vw'>
                 Buy Now!
               </Button>
             </HStack>
