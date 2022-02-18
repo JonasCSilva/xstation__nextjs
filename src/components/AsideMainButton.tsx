@@ -2,7 +2,7 @@ import { Button, Heading } from '@chakra-ui/react'
 import { Dispatch, JSXElementConstructor, ReactElement, SetStateAction } from 'react'
 
 const buttonStyle = {
-  h: '5.4vh',
+  h: '2.7rem',
   variant: 'ghost',
   isFullWidth: true,
   display: 'flex',
@@ -25,14 +25,14 @@ export default function AsideMainButton({
 }: AsideMainButtonProps) {
   return (
     <Button
-      borderRadius='0.4vw'
+      borderRadius='0.4rem'
       onClick={() => setSelectedButtonIndex(index)}
       aria-selected={selectedButtonIndex === index}
       _selected={{ bgColor: 'green.500' }}
       leftIcon={icon}
       {...buttonStyle}
     >
-      <Heading isTruncated fontSize='1.1vw'>
+      <Heading isTruncated fontSize='1.1rem'>
         {text}
       </Heading>
     </Button>

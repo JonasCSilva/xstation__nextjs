@@ -4,9 +4,9 @@ import MainGame from './MainGame'
 
 export default function Main() {
   return (
-    <Flex as='main' w='80%' pos='absolute' align='center' direction='column' top='6rem' left='20%'>
+    <Flex as='main' pos='absolute' align='center' direction='column' top='6rem' left={{ base: 0, lg: '18rem' }} w='auto'>
       <MainGame />
-      <Divider bgColor='gray.600' h={1} borderWidth={0} />
+      <Divider bgColor='gray.600' h='0.05rem' borderWidth={0} />
       <HStack justify='space-between' my='2rem' w='85%'>
         <Heading as='h2' size='xl'>
           Popular
@@ -19,7 +19,7 @@ export default function Main() {
         </Select>
       </HStack>
       <GamesGrid />
-      <Flex as='footer' h='3rem' />
+      <Flex as='footer' my='3rem' />
     </Flex>
   )
 }

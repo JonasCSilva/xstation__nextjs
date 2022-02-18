@@ -1,12 +1,13 @@
 import { Grid } from '@chakra-ui/react'
-import useWindowSize from '../hooks/useWindowSize'
 import GameCard from './GameCard'
 
 export default function GamesGrid() {
-  const isMQTrue = useWindowSize()
-
   return (
-    <Grid templateColumns={isMQTrue ? 'repeat(auto-fill, minmax(120px, 1fr))' : 'repeat(4, 1fr)'} gap='3vw' w='90%'>
+    <Grid
+      templateColumns={{ base: 'repeat(auto-fill, minmax(20rem, 1fr))', xl: 'repeat(3, 1fr)', '2xl': 'repeat(4, 1fr)' }}
+      gap='3rem'
+      w='90%'
+    >
       <GameCard rank={1} defaultPrice={34} promoPrice={19} gameName='The Witcher 3' imageAlign='40% 50%' imageLink='/thewitcher.jpg' />
       <GameCard
         rank={2}
@@ -14,7 +15,7 @@ export default function GamesGrid() {
         promoPrice={54}
         gameName='Red Dead Redemption 2'
         imageAlign='55% 99%'
-        fontSize='1.2vw'
+        fontSize='1.2rem'
         imageLink='/reddead2.jpg'
       />
       <GameCard rank={3} defaultPrice={49} promoPrice={24} gameName='GTA 5' imageAlign='48% 50%' imageLink='/gta5.jpg' />
@@ -24,7 +25,7 @@ export default function GamesGrid() {
         defaultPrice={34}
         promoPrice={19}
         gameName='Dragon Age Inquisition'
-        fontSize='1.3vw'
+        fontSize='1.3rem'
         imageAlign='27% 50%'
         imageLink='/dragonage.jpg'
       />
@@ -35,7 +36,7 @@ export default function GamesGrid() {
         defaultPrice={39}
         promoPrice={29}
         gameName='MGS 5: The Phantom Pain'
-        fontSize='1.2vw'
+        fontSize='1.2rem'
         imageAlign='28% 50%'
         imageLink='/metalgear.jpg'
       />

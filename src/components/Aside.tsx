@@ -6,6 +6,7 @@ export default function Aside() {
 
   return (
     <Flex
+      display={{ base: 'none', lg: 'block' }}
       as='aside'
       pos='fixed'
       left={0}
@@ -13,8 +14,8 @@ export default function Aside() {
       direction='column'
       justify='space-between'
       align='center'
-      w='20%'
-      h='100vh'
+      w='18rem'
+      h='100%'
       borderRightWidth='0.1rem'
       borderRightColor='gray.700'
       borderRightStyle='solid'
@@ -37,7 +38,7 @@ export default function Aside() {
           XStation
         </Heading>
       </Flex>
-      <Flex w='100%' h='calc(100vh - 12rem)' justify='center' overflowY='scroll'>
+      <Flex w='100%' h='calc(100% - 12rem)' justify='center' overflowY='scroll'>
         <AsideMain />
       </Flex>
       <Flex w='100%' justify='center' align='center' h='6rem' borderTopWidth='0.1rem' borderTopColor='gray.700' borderTopStyle='solid'>

@@ -7,7 +7,7 @@ const backgroundStyle = {
   position: 'absolute' as const,
   left: 0,
   top: 0,
-  width: 'inherit',
+  width: '100%',
   height: 'inherit'
 }
 
@@ -23,12 +23,13 @@ export default function MainGame() {
   let index = 0
 
   return (
-    <Flex h='calc(100vh - 12rem)' w='100%'>
-      <Image src={imageSrc} alt='Game Logo' fit='cover' align='50% 40%' {...backgroundStyle} />
-      <Box bgGradient='linear(to-b, transparent, black )' {...backgroundStyle} />
-      <Flex px='3.2rem' py='2.4rem' zIndex={1}>
-        <VStack spacing='1.5rem' align='flex-start' justify='space-around' /* flex={1} */ /* w='calc(auto - 6rem)' */>
-          <Image src='/logoreach2.png' alt='Game Logo' />
+    <Flex h={{ base: '40rem', lg: '32rem', xl: 'calc(100vh - 12rem)' }} w='100%'>
+      <Image src={imageSrc} alt='Main Game' fit='cover' align='50% 40%' {...backgroundStyle} />
+      <Box bgGradient='linear(to-b, transparent 50%, black)' {...backgroundStyle} />
+      <Box bgGradient='linear(to-l, transparent 60%, black )' {...backgroundStyle} />
+      <Flex px='3.2rem' py='2.4rem' zIndex={1} justify='space-between' w='100%'>
+        <VStack spacing='1.5rem' align='flex-start' justify='space-around' w={{ lg: '16rem', xl: '20rem', '2xl': '26rem' }}>
+          <Image src='/logoreach3.png' alt='Game Logo' />
           <VStack align='flex-start' pl='1.8rem' spacing='0.5rem'>
             <Tag minH={0} minW={0} variant='solid' bgColor='#ff754c' px='0.2rem'>
               <TagLeftIcon w='1.3rem' h='1.3rem' as={RiErrorWarningLine} />

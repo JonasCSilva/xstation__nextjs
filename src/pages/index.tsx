@@ -7,7 +7,7 @@ import { Flex } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
-    <Flex maxW='100%'>
+    <Flex>
       <Head>
         <title>XStation</title>
       </Head>

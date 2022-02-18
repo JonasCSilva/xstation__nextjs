@@ -11,9 +11,9 @@ export default function Navbar() {
     <HStack
       as='nav'
       pos='fixed'
-      left='20%'
+      left={{ base: 0, lg: '18rem' }}
       top={0}
-      w='80%'
+      w={{ base: '100%', lg: 'calc(100% - 18rem)' }}
       h='6rem'
       bgColor={bgColor}
       zIndex={2}
