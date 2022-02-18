@@ -1,14 +1,11 @@
 import { Button, Flex, Heading, Img, Text, useColorMode } from '@chakra-ui/react'
-import useWindowSize from '../hooks/useWindowSize'
 import AsideMain from './AsideMain'
 
 export default function Aside() {
   const { toggleColorMode } = useColorMode()
-  const isMQTrue = useWindowSize()
 
   return (
     <Flex
-      display={isMQTrue ? 'none' : 'block'}
       as='aside'
       pos='fixed'
       left={0}
@@ -18,7 +15,7 @@ export default function Aside() {
       align='center'
       w='20%'
       h='100vh'
-      borderRightWidth='0.1vw'
+      borderRightWidth='0.1rem'
       borderRightColor='gray.700'
       borderRightStyle='solid'
       p={0}
@@ -29,32 +26,31 @@ export default function Aside() {
         justify='space-around'
         align='center'
         w='100%'
-        borderBottomWidth='0.1vw'
+        borderBottomWidth='0.1rem'
         borderBottomColor='gray.700'
         borderBottomStyle='solid'
-        px='1vw'
-        h='12vh'
+        px='1rem'
+        h='6rem'
       >
-        <Img src='/game-console4.png' boxSize='3vw' alt='Site logo' />
-        <Heading as='h1' fontSize='2.8vw'>
+        <Img src='/game-console4.png' boxSize='3rem' alt='Site logo' />
+        <Heading as='h1' fontSize='2.8rem'>
           XStation
         </Heading>
       </Flex>
-      <Flex w='100%' h='76vh' justify='center' overflowY='scroll'>
+      <Flex w='100%' h='calc(100vh - 12rem)' justify='center' overflowY='scroll'>
         <AsideMain />
       </Flex>
-      <Flex width='100%' justify='center' align='center' h='12vh' borderTopWidth='0.1vw' borderTopColor='gray.700' borderTopStyle='solid'>
+      <Flex w='100%' justify='center' align='center' h='6rem' borderTopWidth='0.1rem' borderTopColor='gray.700' borderTopStyle='solid'>
         <Button
           onClick={toggleColorMode}
-          h='5vh'
-          w='11vw'
+          size='lg'
           borderRadius={0}
           bg='transparent'
-          borderWidth='0.1vw'
+          borderWidth='0.1rem'
           borderColor='gray.700'
           borderStyle='solid'
         >
-          <Text fontWeight='semibold' color='gray.500' fontSize='1.2vw'>
+          <Text fontWeight='semibold' color='gray.500' fontSize='xl'>
             Change Theme
           </Text>
         </Button>

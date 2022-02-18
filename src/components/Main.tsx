@@ -1,28 +1,17 @@
 import { Divider, Flex, Heading, HStack, Select } from '@chakra-ui/react'
-import useWindowSize from '../hooks/useWindowSize'
 import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
 export default function Main() {
-  const isMQTrue = useWindowSize()
-
   return (
-    <Flex
-      as='main'
-      w={isMQTrue ? '100%' : '80%'}
-      pos='absolute'
-      align='center'
-      direction='column'
-      top={isMQTrue ? '8vh' : '12vh'}
-      left={isMQTrue ? 0 : '20%'}
-    >
+    <Flex as='main' w='80%' pos='absolute' align='center' direction='column' top='6rem' left='20%'>
       <MainGame />
       <Divider bgColor='gray.600' h={1} borderWidth={0} />
-      <HStack justify='space-between' my='6vh' w='85%'>
-        <Heading as='h2' w='15vw' fontSize='2.3vw'>
+      <HStack justify='space-between' my='2rem' w='85%'>
+        <Heading as='h2' size='xl'>
           Popular
         </Heading>
-        <Select w='15vw' placeholder='All platforms' fontSize='1vw' h='5vh'>
+        <Select w='20%' placeholder='All platforms'>
           <option>PC</option>
           <option>Playstation</option>
           <option>XBOX</option>
@@ -30,7 +19,7 @@ export default function Main() {
         </Select>
       </HStack>
       <GamesGrid />
-      <Flex as='footer' h='5vh' />
+      <Flex as='footer' h='3rem' />
     </Flex>
   )
 }

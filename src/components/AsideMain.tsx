@@ -23,15 +23,15 @@ export default function AsideMain() {
   let index = 0
 
   return (
-    <VStack w='80%' spacing='1vh'>
-      <VStack w='100%' spacing='1vh'>
+    <VStack w='80%' spacing='0.5rem'>
+      <VStack w='100%' spacing='0.5rem'>
         <AsideMainButton text='Trending' icon={<MdOutlineWhatshot size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='News' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Offers' icon={<MdOutlineLocalOffer size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Recommended' icon={<MdOutlineRecommend size='1.8vw' />} index={++index} {...buttonProps} />
       </VStack>
-      <Divider borderWidth='0.1vh' />
-      <VStack w='100%' spacing='1vh'>
+      <Divider borderWidth='0.05rem' />
+      <VStack w='100%' spacing='0.5rem'>
         <AsideMainButton text='DylanH867' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Vincent_Parks45' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Richard_The_Pro' icon={<MdOutlineNewReleases size='1.8vw' />} index={++index} {...buttonProps} />
@@ -43,8 +43,8 @@ export default function AsideMain() {
           </Heading>
         </Button>
       </VStack>
-      <Divider borderWidth='0.1vh' />
-      <VStack w='100%' spacing='1vh'>
+      <Divider borderWidth='0.05rem' />
+      <VStack w='100%' spacing='0.5rem'>
         <AsideMainButton text='Chat' icon={<HiOutlineChat size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Groups' icon={<HiOutlineUserGroup size='1.8vw' />} index={++index} {...buttonProps} />
         <AsideMainButton text='Settings' icon={<RiSettings3Line size='1.8vw' />} index={++index} {...buttonProps} />
