@@ -1,10 +1,10 @@
-import { HStack, IconButton, Input, InputLeftElement, InputGroup } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
 import { useContext } from 'react'
-import { FiSearch } from 'react-icons/fi'
 import { ColorsContext } from '../contexts/ColorsContext'
 import BrowsePopover from './BrowsePopover'
 import NotificationsPopover from './NotificationsPopover'
 import ProfilePopover from './ProfilePopover'
+import SearchBar from './SearchBar'
 
 export default function Navbar() {
   const { bgColor } = useContext(ColorsContext)
@@ -26,18 +26,7 @@ export default function Navbar() {
       justify='space-around'
     >
       <BrowsePopover />
-      <InputGroup size='lg' w='40%' role='group'>
-        <Input
-          size='lg'
-          _groupHover={{ borderColor: 'green.500', boxShadow: '0 0.1rem 0 0 #38A169' }}
-          _focus={{ borderColor: 'green.500', boxShadow: '0 0.1rem 0 0 #38A169' }}
-          variant='flushed'
-          placeholder='Search anything'
-        />
-        <InputLeftElement>
-          <IconButton aria-label='Search games' icon={<FiSearch size='2rem' />} boxSize='3rem' variant='ghost' />
-        </InputLeftElement>
-      </InputGroup>
+      <SearchBar />
       <NotificationsPopover />
       <ProfilePopover />
     </HStack>

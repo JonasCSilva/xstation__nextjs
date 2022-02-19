@@ -1,27 +1,27 @@
-import { VStack, Button, Heading, Icon, StackDivider, Text } from '@chakra-ui/react'
+import { VStack, Button, Heading, Icon, StackDivider } from '@chakra-ui/react'
 import { useState } from 'react'
-import AsideMainButton from './AsideMainButton'
 import { MdOutlineWhatshot, MdOutlineNewReleases, MdOutlineLocalOffer, MdOutlineRecommend } from 'react-icons/md'
 import { BsArrowDownCircle } from 'react-icons/bs'
 import { HiOutlineChat, HiOutlineUserGroup } from 'react-icons/hi'
 import { RiSettings3Line } from 'react-icons/ri'
 import { CgProfile } from 'react-icons/cg'
 import { IconType } from 'react-icons'
+import Section from './Section'
+
+type ButtonValues = {
+  text: string
+  icon: IconType
+}
+
+export type ButtonValues2 = ButtonValues & {
+  index: number
+}
 
 export default function AsideMain() {
   const selectedButtonIndexState = useState(1)
 
   const buttonProps = {
     selectedButtonIndexState: selectedButtonIndexState
-  }
-
-  type ButtonValues = {
-    text: string
-    icon: IconType
-  }
-
-  type ButtonValues2 = ButtonValues & {
-    index: number
   }
 
   const buttonValues1: ButtonValues[] = [
@@ -85,26 +85,18 @@ export default function AsideMain() {
 
   const test2: ButtonValues2[] = test.map((value, index) => ({ ...value, index }))
 
+  const SectionProps = {
+    buttonValues: test2,
+    buttonProps
+  }
+
   const length1 = buttonValues1.length
   const length2 = buttonValues1.length + buttonValues2.length
 
   return (
     <VStack w='80%' spacing='0.75rem' py='0.75rem' h='fit-content' divider={<StackDivider borderWidth='0.05rem' />}>
-      <VStack w='100%' spacing='0.5rem' align='flex-start'>
-        <Text fontSize='0.8rem' ml='1.1rem'>
-          Store
-        </Text>
-        {test2.slice(0, length1).map(({ text, icon, index }) => (
-          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
-        ))}
-      </VStack>
-      <VStack w='100%' spacing='0.5rem' align='flex-start'>
-        <Text fontSize='0.8rem' ml='1.1rem'>
-          Friends
-        </Text>
-        {test2.slice(length1, length2).map(({ text, icon, index }) => (
-          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
-        ))}
+      <Section title='Store' {...SectionProps} length2={length1} />
+      <Section title='Friends' {...SectionProps} {...{ length1 }} {...{ length2 }}>
         <Button
           rightIcon={<Icon as={BsArrowDownCircle} boxSize='1.8rem' />}
           h='2.7rem'
@@ -116,15 +108,8 @@ export default function AsideMain() {
             Load More
           </Heading>
         </Button>
-      </VStack>
-      <VStack w='100%' spacing='0.5rem' align='flex-start'>
-        <Text fontSize='0.8rem' ml='1.1rem'>
-          Unity Gaming
-        </Text>
-        {test2.slice(length2).map(({ text, icon, index }) => (
-          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
-        ))}
-      </VStack>
+      </Section>
+      <Section title='General' {...SectionProps} length1={length2} />
     </VStack>
   )
 }
