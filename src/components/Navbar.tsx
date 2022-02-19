@@ -13,10 +13,11 @@ export default function Navbar() {
     <HStack
       as='nav'
       pos='fixed'
-      left={{ base: 0, lg: '18rem' }}
+      left={{ base: 0, lg: '16rem' }}
       top={0}
-      w={{ base: '100%', lg: 'calc(100% - 18rem)' }}
+      w={{ base: '100%', lg: 'calc(100% - 16rem)' }}
       h='6rem'
+      px='2rem'
       bgColor={bgColor}
       zIndex={2}
       borderBottomWidth='0.1rem'

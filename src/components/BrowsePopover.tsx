@@ -12,29 +12,49 @@ import DropdownOptionButton from './DropdownOptionButton'
 import { FaRegCompass } from 'react-icons/fa'
 import { IoIosArrowDown } from 'react-icons/io'
 
+const genresArray = [
+  'Action',
+  'Action-Adventure',
+  'Adventure',
+  'Role-Playing',
+  'Simulation',
+  'Strategy',
+  'Sports',
+  'MMO'
+]
+
 export default function BrowsePopover() {
   return (
     <Popover>
-      <PopoverTrigger>
-        <Button leftIcon={<Icon as={FaRegCompass} />} rightIcon={<Icon as={IoIosArrowDown} />} variant='ghost'>
-          Browse
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent w='fit-content'>
-        <PopoverArrow />
-        <PopoverBody py='0.6rem'>
-          <VStack spacing='0.5rem'>
-            <DropdownOptionButton text='Action' />
-            <DropdownOptionButton text='Action-Adventure' />
-            <DropdownOptionButton text='Adventure' />
-            <DropdownOptionButton text='Role-Playing' />
-            <DropdownOptionButton text='Simulation' />
-            <DropdownOptionButton text='Strategy' />
-            <DropdownOptionButton text='Sports' />
-            <DropdownOptionButton text='MMO' />
-          </VStack>
-        </PopoverBody>
-      </PopoverContent>
+      {({ isOpen }) => (
+        <>
+          <PopoverTrigger>
+            <Button
+              leftIcon={<Icon as={FaRegCompass} />}
+              rightIcon={
+                <Icon
+                  as={IoIosArrowDown}
+                  transform={isOpen ? 'rotate(180deg)' : undefined}
+                  transition='ease-in-out 0.3s'
+                />
+              }
+              variant='ghost'
+            >
+              Browse
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent w='fit-content'>
+            <PopoverArrow />
+            <PopoverBody py='0.6rem'>
+              <VStack spacing='0.5rem'>
+                {genresArray.map((value, index) => (
+                  <DropdownOptionButton key={index} text={value} />
+                ))}
+              </VStack>
+            </PopoverBody>
+          </PopoverContent>
+        </>
+      )}
     </Popover>
   )
 }

@@ -14,7 +14,7 @@ export default function Aside() {
       direction='column'
       justify='space-between'
       align='center'
-      w='18rem'
+      w='16rem'
       h='100%'
       borderRightWidth='0.1rem'
       borderRightColor='gray.700'
@@ -41,7 +41,15 @@ export default function Aside() {
       <Flex w='100%' h='calc(100% - 12rem)' justify='center' overflowY='scroll'>
         <AsideMain />
       </Flex>
-      <Flex w='100%' justify='center' align='center' h='6rem' borderTopWidth='0.1rem' borderTopColor='gray.700' borderTopStyle='solid'>
+      <Flex
+        w='100%'
+        justify='center'
+        align='center'
+        h='6rem'
+        borderTopWidth='0.1rem'
+        borderTopColor='gray.700'
+        borderTopStyle='solid'
+      >
         <Button
           onClick={toggleColorMode}
           size='lg'

@@ -1,17 +1,12 @@
-import { VStack, Divider, Button, Heading, Icon } from '@chakra-ui/react'
+import { VStack, Button, Heading, Icon, StackDivider, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 import AsideMainButton from './AsideMainButton'
 import { MdOutlineWhatshot, MdOutlineNewReleases, MdOutlineLocalOffer, MdOutlineRecommend } from 'react-icons/md'
 import { BsArrowDownCircle } from 'react-icons/bs'
 import { HiOutlineChat, HiOutlineUserGroup } from 'react-icons/hi'
 import { RiSettings3Line } from 'react-icons/ri'
-
-const buttonStyle = {
-  h: '2.7rem',
-  variant: 'ghost',
-  isFullWidth: true,
-  borderRadius: '0.4rem'
-}
+import { CgProfile } from 'react-icons/cg'
+import { IconType } from 'react-icons'
 
 export default function AsideMain() {
   const selectedButtonIndexState = useState(1)
@@ -20,34 +15,115 @@ export default function AsideMain() {
     selectedButtonIndexState: selectedButtonIndexState
   }
 
-  let index = 0
+  type ButtonValues = {
+    text: string
+    icon: IconType
+  }
+
+  type ButtonValues2 = ButtonValues & {
+    index: number
+  }
+
+  const buttonValues1: ButtonValues[] = [
+    {
+      text: 'Trending',
+      icon: MdOutlineWhatshot
+    },
+    {
+      text: 'News',
+      icon: MdOutlineNewReleases
+    },
+    {
+      text: 'Offers',
+      icon: MdOutlineLocalOffer
+    },
+    {
+      text: 'Recommended',
+      icon: MdOutlineRecommend
+    }
+  ]
+
+  const buttonValues2: ButtonValues[] = [
+    {
+      text: 'DylanH867',
+      icon: CgProfile
+    },
+    {
+      text: 'Vincent_Parks45',
+      icon: CgProfile
+    },
+    {
+      text: 'Richard_The_Pro',
+      icon: CgProfile
+    },
+    {
+      text: 'xXThe_MasterXx',
+      icon: CgProfile
+    },
+    {
+      text: 'OLeo_z',
+      icon: CgProfile
+    }
+  ]
+
+  const buttonValues3: ButtonValues[] = [
+    {
+      text: 'Chat',
+      icon: HiOutlineChat
+    },
+    {
+      text: 'Groups',
+      icon: HiOutlineUserGroup
+    },
+    {
+      text: 'Settings',
+      icon: RiSettings3Line
+    }
+  ]
+
+  const test: ButtonValues[] = [...buttonValues1, ...buttonValues2, ...buttonValues3]
+
+  const test2: ButtonValues2[] = test.map((value, index) => ({ ...value, index }))
+
+  const length1 = buttonValues1.length
+  const length2 = buttonValues1.length + buttonValues2.length
 
   return (
-    <VStack w='80%' spacing='0.75rem'>
-      <VStack w='100%' spacing='0.5rem'>
-        <AsideMainButton text='Trending' icon={MdOutlineWhatshot} index={++index} {...buttonProps} />
-        <AsideMainButton text='News' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <AsideMainButton text='Offers' icon={MdOutlineLocalOffer} index={++index} {...buttonProps} />
-        <AsideMainButton text='Recommended' icon={MdOutlineRecommend} index={++index} {...buttonProps} />
+    <VStack w='80%' spacing='0.75rem' py='0.75rem' h='fit-content' divider={<StackDivider borderWidth='0.05rem' />}>
+      <VStack w='100%' spacing='0.5rem' align='flex-start'>
+        <Text fontSize='0.8rem' ml='1.1rem'>
+          Store
+        </Text>
+        {test2.slice(0, length1).map(({ text, icon, index }) => (
+          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
+        ))}
       </VStack>
-      <Divider borderWidth='0.05rem' />
-      <VStack w='100%' spacing='0.5rem'>
-        <AsideMainButton text='DylanH867' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <AsideMainButton text='Vincent_Parks45' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <AsideMainButton text='Richard_The_Pro' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <AsideMainButton text='xXThe_MasterXx' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <AsideMainButton text='OLeo_z' icon={MdOutlineNewReleases} index={++index} {...buttonProps} />
-        <Button rightIcon={<Icon as={BsArrowDownCircle} boxSize='1.8rem' />} {...buttonStyle}>
+      <VStack w='100%' spacing='0.5rem' align='flex-start'>
+        <Text fontSize='0.8rem' ml='1.1rem'>
+          Friends
+        </Text>
+        {test2.slice(length1, length2).map(({ text, icon, index }) => (
+          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
+        ))}
+        <Button
+          rightIcon={<Icon as={BsArrowDownCircle} boxSize='1.8rem' />}
+          h='2.7rem'
+          variant='ghost'
+          isFullWidth
+          borderRadius='0.4rem'
+        >
           <Heading isTruncated fontSize='1.1rem'>
             Load More
           </Heading>
         </Button>
       </VStack>
-      <Divider borderWidth='0.05rem' />
-      <VStack w='100%' spacing='0.5rem'>
-        <AsideMainButton text='Chat' icon={HiOutlineChat} index={++index} {...buttonProps} />
-        <AsideMainButton text='Groups' icon={HiOutlineUserGroup} index={++index} {...buttonProps} />
-        <AsideMainButton text='Settings' icon={RiSettings3Line} index={++index} {...buttonProps} />
+      <VStack w='100%' spacing='0.5rem' align='flex-start'>
+        <Text fontSize='0.8rem' ml='1.1rem'>
+          Unity Gaming
+        </Text>
+        {test2.slice(length2).map(({ text, icon, index }) => (
+          <AsideMainButton {...{ text }} {...{ icon }} key={index} {...{ index }} {...buttonProps} />
+        ))}
       </VStack>
     </VStack>
   )
