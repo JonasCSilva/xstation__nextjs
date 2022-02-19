@@ -11,7 +11,7 @@
     "comma-dangle": ["warn", "never"],
     "quotes": ["warn", "single"],
     "semi": ["warn", "never"],
-    "max-len": ["warn", { "code": 140 }],
+    "max-len": ["warn", { "code": 120 }],
     "arrow-parens": ["warn", "as-needed"],
     "jsx-quotes": ["warn", "prefer-single"],
     "@next/next/no-document-import-in-page": "off",

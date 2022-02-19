@@ -1,5 +1,5 @@
-import { Button, Heading } from '@chakra-ui/react'
-import { Dispatch, JSXElementConstructor, ReactElement, SetStateAction } from 'react'
+import { As, Button, Heading, Icon } from '@chakra-ui/react'
+import { Dispatch, SetStateAction } from 'react'
 
 const buttonStyle = {
   h: '2.7rem',
@@ -7,14 +7,16 @@ const buttonStyle = {
   isFullWidth: true,
   display: 'flex',
   justifyContent: 'left',
-  transition: 'ease-in-out 0.2s'
+  transition: 'ease-in-out 0.2s',
+  borderRadius: '0.4rem',
+  _selected: { bgColor: 'green.500' }
 }
 
 type AsideMainButtonProps = {
   selectedButtonIndexState: [number, Dispatch<SetStateAction<number>>]
   text: string
   index: number
-  icon: ReactElement<any, string | JSXElementConstructor<any>>
+  icon: As<any>
 }
 
 export default function AsideMainButton({
@@ -25,11 +27,9 @@ export default function AsideMainButton({
 }: AsideMainButtonProps) {
   return (
     <Button
-      borderRadius='0.4rem'
       onClick={() => setSelectedButtonIndex(index)}
       aria-selected={selectedButtonIndex === index}
-      _selected={{ bgColor: 'green.500' }}
-      leftIcon={icon}
+      leftIcon={<Icon as={icon} boxSize='1.8rem' />}
       {...buttonStyle}
     >
       <Heading isTruncated fontSize='1.1rem'>
