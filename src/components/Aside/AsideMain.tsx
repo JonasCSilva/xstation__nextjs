@@ -6,7 +6,7 @@ import { HiOutlineChat, HiOutlineUserGroup } from 'react-icons/hi'
 import { RiSettings3Line } from 'react-icons/ri'
 import { CgProfile } from 'react-icons/cg'
 import { IconType } from 'react-icons'
-import Section from './Section'
+import AsideMainSection from './AsideMainSection'
 
 type ButtonValues = {
   text: string
@@ -95,8 +95,8 @@ export default function AsideMain() {
 
   return (
     <VStack w='80%' spacing='0.75rem' py='0.75rem' h='fit-content' divider={<StackDivider borderWidth='0.05rem' />}>
-      <Section title='Store' {...SectionProps} length2={length1} />
-      <Section title='Friends' {...SectionProps} {...{ length1 }} {...{ length2 }}>
+      <AsideMainSection title='Store' {...SectionProps} length2={length1} />
+      <AsideMainSection title='Friends' {...SectionProps} {...{ length1 }} {...{ length2 }}>
         <Button
           rightIcon={<Icon as={BsArrowDownCircle} boxSize='1.8rem' />}
           h='2.7rem'
@@ -108,8 +108,8 @@ export default function AsideMain() {
             Load More
           </Heading>
         </Button>
-      </Section>
-      <Section title='General' {...SectionProps} length1={length2} />
+      </AsideMainSection>
+      <AsideMainSection title='General' {...SectionProps} length1={length2} />
     </VStack>
   )
 }

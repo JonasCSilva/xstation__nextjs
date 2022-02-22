@@ -1,5 +1,5 @@
 import { Grid } from '@chakra-ui/react'
-import { GameCardsValues } from '../types'
+import { GameCardsValues } from '../../types'
 import GameCard from './GameCard'
 
 export default function GamesGrid({ gameCardsValues }: { gameCardsValues: GameCardsValues[] }) {

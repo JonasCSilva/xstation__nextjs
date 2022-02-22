@@ -11,7 +11,7 @@ import {
   useColorMode
 } from '@chakra-ui/react'
 import { RiErrorWarningLine } from 'react-icons/ri'
-import { GameCardsValues } from '../types'
+import { GameCardsValues } from '../../types'
 
 type GameCardProps = GameCardsValues & {
   rank: number

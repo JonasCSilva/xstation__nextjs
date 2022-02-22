@@ -1,6 +1,6 @@
 import { HStack } from '@chakra-ui/react'
 import { useContext } from 'react'
-import { ColorsContext } from '../contexts/ColorsContext'
+import { ColorsContext } from '../../contexts/ColorsContext'
 import BrowsePopover from './BrowsePopover'
 import NotificationsPopover from './NotificationsPopover'
 import ProfilePopover from './ProfilePopover'

@@ -9,7 +9,7 @@ import {
   AvatarBadge
 } from '@chakra-ui/react'
 import DropdownOptionButton from './DropdownOptionButton'
-import { ColorsContext } from '../contexts/ColorsContext'
+import { ColorsContext } from '../../contexts/ColorsContext'
 import { useContext } from 'react'
 import { MdManageAccounts, MdLogout } from 'react-icons/md'
 

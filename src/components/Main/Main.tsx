@@ -1,5 +1,5 @@
 import { Divider, Flex, Heading, HStack, Select } from '@chakra-ui/react'
-import { GameCardsValues } from '../types'
+import { GameCardsValues } from '../../types'
 import GamesGrid from './GamesGrid'
 import MainGame from './MainGame'
 
