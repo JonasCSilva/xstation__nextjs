@@ -23,6 +23,7 @@ export default function ImageButton({
       w='7rem'
       h='3.5rem'
       borderRadius='0.8rem'
+      bg='none'
       isDisabled={selectedImageIndex === imageIndex}
       _disabled={{ opacity: 1, cursor: 'default' }}
       _selected={{ boxShadow: '0rem 0rem 1rem 0.15rem #fffeff' }}
@@ -31,7 +32,7 @@ export default function ImageButton({
       <Image
         src={`/haloreach${imageIndex}.jpg`}
         alt={`Game Image ${imageIndex}`}
-        borderWidth='0.1rem'
+        borderWidth='0.15rem'
         borderStyle='solid'
         borderColor='#313b40'
         boxSize='inherit'

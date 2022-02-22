@@ -10,7 +10,7 @@ export const ColorsContext = createContext({} as ColorsContextData)
 //
 
 export function ColorsContextProvider({ children }: { children: ReactNode }) {
-  const bgColor = useColorModeValue('gray.200', 'gray.800')
+  const bgColor = useColorModeValue('gray.100', 'gray.800')
 
   return (
     <ColorsContext.Provider

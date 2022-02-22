@@ -14,13 +14,15 @@ export default function Navbar() {
       as='nav'
       pos='fixed'
       left={{ base: 0, lg: '16rem' }}
-      top={0}
+      top={{ base: undefined, lg: 0 }}
+      bottom={{ base: 0, lg: undefined }}
       w={{ base: '100%', lg: 'calc(100% - 16rem)' }}
       h='6rem'
       px='2rem'
       bgColor={bgColor}
       zIndex={2}
-      borderBottomWidth='0.1rem'
+      borderBottomWidth={{ base: 0, lg: '0.1rem' }}
+      borderTopWidth={{ base: '0.25rem', lg: 0 }}
       borderBottomColor='gray.700'
       borderBottomStyle='solid'
       justify='space-around'

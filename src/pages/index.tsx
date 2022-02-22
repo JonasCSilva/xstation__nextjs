@@ -14,8 +14,20 @@ const Home: NextPage<{ gameCardsValues: GameCardsValues[] }> = ({ gameCardsValue
         <title>XStation</title>
       </Head>
       <Aside />
+      {/* Combine */}
       <Navbar />
-      <Main gameCardsValues={gameCardsValues} />
+      <Flex
+        h='calc(100vh - 6rem)'
+        overflowY='scroll'
+        as='main'
+        pos='absolute'
+        top={{ base: 0, lg: '6rem' }}
+        left={{ base: 0, lg: '16rem' }}
+        w={{ base: '100%', lg: 'calc(100% - 16rem)' }}
+      >
+        <Main gameCardsValues={gameCardsValues} />
+      </Flex>
+      {/* Combine */}
     </Flex>
   )
 }

@@ -1,10 +1,24 @@
-import { GridItem, Heading, Image, HStack, Button, Tag, TagLeftIcon, TagLabel, VStack } from '@chakra-ui/react'
+import {
+  GridItem,
+  Heading,
+  Image,
+  HStack,
+  Button,
+  Tag,
+  TagLeftIcon,
+  TagLabel,
+  VStack,
+  useColorMode
+} from '@chakra-ui/react'
 import { RiErrorWarningLine } from 'react-icons/ri'
 import { GameCardsValues } from '../types'
 
 type GameCardProps = GameCardsValues & {
   rank: number
 }
+
+const bgColor = { light: 'gray.300', dark: 'gray.700' }
+const defaultPriceColor = { light: 'gray.600', dark: 'gray.500' }
 
 export default function GameCard({
   imageLink,
@@ -15,10 +29,12 @@ export default function GameCard({
   defaultPrice,
   promoPrice
 }: GameCardProps) {
+  const { colorMode } = useColorMode()
+
   return (
     <GridItem
       w='100%'
-      bg='gray.700'
+      bg={bgColor[colorMode]}
       borderRadius='2rem'
       cursor='pointer'
       _hover={{ boxShadow: 'dark-lg' }}
@@ -48,7 +64,7 @@ export default function GameCard({
             fontSize='1.2rem'
             textDecoration='line-through'
             fontWeight='extrabold'
-            color='gray.500'
+            color={defaultPriceColor[colorMode]}
           >
             ${defaultPrice}
           </Heading>

@@ -6,7 +6,8 @@ import {
   PopoverBody,
   PopoverArrow,
   VStack,
-  Center
+  Center,
+  Icon
 } from '@chakra-ui/react'
 import { FaRegBell } from 'react-icons/fa'
 import DropdownOptionButton from './DropdownOptionButton'
@@ -20,7 +21,7 @@ export default function NotificationsPopover() {
           position='relative'
           icon={
             <>
-              <FaRegBell size='2rem' />
+              <Icon as={FaRegBell} boxSize='2rem' />
               <Center
                 as='span'
                 position='absolute'
