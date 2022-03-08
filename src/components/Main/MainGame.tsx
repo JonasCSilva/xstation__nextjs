@@ -1,4 +1,4 @@
-import { Flex, HStack, Box, Image } from '@chakra-ui/react'
+import { Flex, Stack, Box, Image } from '@chakra-ui/react'
 import { useState } from 'react'
 import ImageButton from './ImageButton'
 import MainGameLeftSide from './MainGameLeftSide'
@@ -21,18 +21,18 @@ export default function MainGame() {
   }
 
   return (
-    <Flex h={{ base: '40rem', lg: '32rem', xl: 'calc(100vh - 12rem)' }} w='100%'>
+    <Flex h={{ base: '28rem', lg: '32rem', xl: 'calc(100vh - 12rem)' }} w='100%'>
       <Image src={imageSrc} alt='Main Game' fit='cover' align='50% 40%' {...backgroundStyle} />
       <Box bgGradient='linear(to-b, transparent 50%, black)' {...backgroundStyle} />
       <Box bgGradient='linear(to-l, transparent 60%, black )' {...backgroundStyle} />
       <Flex px='3.2rem' py='2.4rem' zIndex={1} justify='space-between' w='100%'>
         <MainGameLeftSide />
         <Flex align='flex-end' justify='flex-end' w='fit-content'>
-          <HStack spacing='1rem'>
+          <Stack direction={{ base: 'column', lg: 'row' }} spacing='1rem'>
             {Array.from(Array(4).keys()).map(value => (
               <ImageButton key={value} {...imageButtonProps} imageIndex={++value} />
             ))}
-          </HStack>
+          </Stack>
         </Flex>
       </Flex>
     </Flex>

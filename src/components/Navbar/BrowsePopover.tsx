@@ -30,15 +30,18 @@ export default function BrowsePopover() {
         <>
           <PopoverTrigger>
             <Button
-              leftIcon={<Icon as={FaRegCompass} />}
+              leftIcon={<Icon as={FaRegCompass} boxSize='2rem' />}
               rightIcon={
                 <Icon
                   as={IoIosArrowDown}
                   transform={isOpen ? 'rotate(180deg)' : undefined}
                   transition='ease-in-out 0.3s'
+                  boxSize='2rem'
                 />
               }
               variant='ghost'
+              h='3rem'
+              fontSize='lg'
             >
               Browse
             </Button>

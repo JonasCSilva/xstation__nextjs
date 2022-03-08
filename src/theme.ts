@@ -12,7 +12,7 @@ const customTheme = {
   styles: {
     global: (props: never) => ({
       'html, body': {
-        bg: mode('gray.200', 'gray.800')(props),
+        bg: mode('gray.100', 'gray.800')(props),
         padding: 0,
         fontFamily: 'Inter'
       },
