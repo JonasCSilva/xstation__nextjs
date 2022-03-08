@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import DropdownOptionButton from './DropdownOptionButton'
 import { MdManageAccounts, MdLogout } from 'react-icons/md'
-import { bgColor } from '../theme'
+import { bgColor } from '../../theme'
 
 export default function ProfilePopover() {
   const { colorMode } = useColorMode()
