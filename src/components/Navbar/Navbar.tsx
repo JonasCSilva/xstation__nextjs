@@ -1,14 +1,11 @@
 import { HStack } from '@chakra-ui/react'
-import { useContext } from 'react'
-import { ColorsContext } from '../../contexts/ColorsContext'
+import { bgColor } from '../../theme'
 import BrowsePopover from './BrowsePopover'
 import NotificationsPopover from './NotificationsPopover'
 import ProfilePopover from './ProfilePopover'
 import SearchBar from './SearchBar'
 
 export default function Navbar() {
-  const { bgColor } = useContext(ColorsContext)
-
   return (
     <HStack
       as='nav'
