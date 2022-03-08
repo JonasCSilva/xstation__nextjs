@@ -9,7 +9,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang='en'>
         <Head>
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/game-console4.png' />
           <link href={`https://fonts.googleapis.com/css2?${font1}&${font2}&display=swap`} rel='stylesheet' />
         </Head>
         <body>

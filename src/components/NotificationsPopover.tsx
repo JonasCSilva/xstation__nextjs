@@ -20,7 +20,7 @@ export default function NotificationsPopover() {
           position='relative'
           icon={
             <>
-              <FaRegBell size='2rem' />
+              <FaRegBell size={32} />
               <Center
                 as='span'
                 position='absolute'

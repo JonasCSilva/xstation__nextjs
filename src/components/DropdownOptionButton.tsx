@@ -8,9 +8,9 @@ type DropdownOptionButtonProps = {
 
 export default function DropdownOptionButton({ quantity, text, icon }: DropdownOptionButtonProps) {
   return (
-    <Button variant='ghost' isFullWidth leftIcon={icon && <Icon as={icon} boxSize='1.4rem' />}>
+    <Button variant='ghost' isFullWidth leftIcon={icon && <Icon as={icon} boxSize='1.4rem' m={0} />}>
       {quantity && (
-        <Text as='span' color='orange.500' mr='0.4rem' fontSize='1.4rem'>
+        <Text as='span' color='orange.500' /* mr='0.4rem' */ fontSize='1.4rem'>
           {quantity}
         </Text>
       )}

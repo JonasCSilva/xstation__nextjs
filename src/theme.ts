@@ -1,6 +1,8 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
+export const bgColor = { light: 'gray.200', dark: 'gray.800' }
+
 const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: false
